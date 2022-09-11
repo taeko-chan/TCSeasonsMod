@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "TCWeatherMod",
+  "version": "${version}",
+  "name": "TCWeatherMod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/TCWeatherMod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "ch.taeko.tcweathermod.client.TCWeatherModClient"
+    ],
+    "main": [
+      "ch.taeko.tcweathermod.TCWeatherMod"
+    ]
+  },
+  "mixins": [
+    "TCWeatherMod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
