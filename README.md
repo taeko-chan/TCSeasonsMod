@@ -1,4 +1,5 @@
 # TCWeatherMod
+## This mod is still under development and the features listed below are not yet avaliable!
 ## What is this mod?
 Ever wanted to have that wintery feeling in Minecraft when it's cold out?
 This mod changes the behavoir of weather events in Minecraft. At the moment it is only used to remove snow from all biomes, a sort of summer
@@ -22,3 +23,7 @@ It will snow everywhere, and ice/snow will not melt. Grass will take on a grayis
 If you go out exploring, load new chunks, then leave and don't return for half a year, the season's attributes will only update once you return.
 This is because the mod changes the biome's temperature. This means that if you go to a plains biome, for example, in winter, it will be automatically
 snowy. Once you come back, in summer, for example, the snow will still be there, but will of course begin to melt instantly.
+## Control of seasons
+Seasons are controlled by the day of the year in real life. This means it will reflect the real meterologic current season (in the northern hemisphere).
+The total amount of days in the cycle, 365, which begins roughly on the 1st of March, is divided into the 4 seasons, each lasting 91.25 days. 
+A season accelerator function will be avaliable. This will multiply the days by a number (0≤x≤1, where 0 is a static season and 1 is 365 days) given by the user.
