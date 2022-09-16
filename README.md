@@ -1,8 +1,8 @@
 # TCWeatherMod
-### What is this mod?
+## What is this mod?
 Ever wanted to have that wintery feeling in Minecraft when it's cold out?
 This mod changes the behavoir of weather events in Minecraft. At the moment it is only used to remove snow from all biomes, a sort of summer
-setting, but in the future will be a *server side* weather mod with all 4 seasons. Yes, other Fabric weather mods exist out there, but the beauty of
+setting, but in the future will be a __*server side*__ weather mod with all 4 seasons. Yes, other Fabric weather mods exist out there, but the beauty of
 this one is that it is server side only. That means that you can install it on your server and your players won't need to install the mod as it does 
 not add to or modify the registry in any way. 
 ## How do I use the mod?
