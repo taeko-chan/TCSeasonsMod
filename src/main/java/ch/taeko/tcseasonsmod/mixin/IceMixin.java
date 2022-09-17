@@ -1,6 +1,6 @@
-package ch.taeko.tcweathermod.mixin;
+package ch.taeko.tcseasonsmod.mixin;
 
-import ch.taeko.tcweathermod.TCWeatherMod;
+import ch.taeko.tcseasonsmod.TCWeatherMod;
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;

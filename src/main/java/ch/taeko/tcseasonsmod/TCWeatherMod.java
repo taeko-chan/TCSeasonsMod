@@ -1,4 +1,4 @@
-package ch.taeko.tcweathermod;
+package ch.taeko.tcseasonsmod;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;

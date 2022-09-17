@@ -1,4 +1,4 @@
-package ch.taeko.tcweathermod.client;
+package ch.taeko.tcseasonsmod.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;

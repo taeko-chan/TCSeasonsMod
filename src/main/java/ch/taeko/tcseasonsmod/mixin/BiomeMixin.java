@@ -1,7 +1,6 @@
-package ch.taeko.tcweathermod.mixin;
+package ch.taeko.tcseasonsmod.mixin;
 
-import ch.taeko.tcweathermod.TCSeason;
-import ch.taeko.tcweathermod.TCWeatherMod;
+import ch.taeko.tcseasonsmod.TCWeatherMod;
 import net.minecraft.world.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;

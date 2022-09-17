@@ -1,4 +1,4 @@
-package ch.taeko.tcweathermod;
+package ch.taeko.tcseasonsmod;
 
 import java.util.Calendar;
 
@@ -53,7 +53,6 @@ public class TCSeason {
 	   double dayc = (1f / 365f) * day;
 	   double sin = Math.sin(a * Math.PI * dayc);
 	   double sintemp = 4 * (Math.pow(sin, 2));
-	   // f(x) = 4*sin^2(a*PI*x)
 
 	   double temp = sintemp;
 	   // double temp = Math.random() * (sintemp + 0.025) + (sintemp - 0.025);

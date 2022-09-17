@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "tcweathermod",
+  "id": "tcseasonsmod",
   "version": "${version}",
-  "name": "TCWeatherMod",
+  "name": "TCSeasonsMod",
   "description": "",
   "authors": [],
   "contact": {},
@@ -11,10 +11,10 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "ch.taeko.tcweathermod.client.TCWeatherModClient"
+      "ch.taeko.tcseasonsmod.client.TCWeatherModClient"
     ],
     "main": [
-      "ch.taeko.tcweathermod.TCWeatherMod"
+      "ch.taeko.tcseasonsmod.TCWeatherMod"
     ]
   },
   "mixins": [
