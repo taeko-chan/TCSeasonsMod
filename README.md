@@ -1,4 +1,4 @@
-# TCWeatherMod
+# TCSeasonsMod
 By Taeko, initially developed for the Taeko & Co Server.
 Supports Fabric Servers, version 1.19.x
 ## What is this mod?
