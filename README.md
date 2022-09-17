@@ -1,5 +1,5 @@
 # TCWeatherMod
-By Taeko, initially developed for the Taeko & Co Server
+By Taeko, initially developed for the Taeko & Co Server.
 Supports Fabric Servers, version 1.19.x
 ## What is this mod?
 Ever wanted to have that wintery feeling in Minecraft when it's cold out?
