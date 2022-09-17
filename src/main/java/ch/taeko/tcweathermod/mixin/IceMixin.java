@@ -1,5 +1,6 @@
 package ch.taeko.tcweathermod.mixin;
 
+import ch.taeko.tcweathermod.TCWeatherMod;
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -17,7 +18,9 @@ public class IceMixin {
      */
     @Overwrite
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        this.melt(state,world,pos);
+        if (TCWeatherMod.currentTemperature > 1) {
+            this.melt(state, world, pos);
+        }
     }
 
     protected void melt(BlockState state, World world, BlockPos pos) {

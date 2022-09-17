@@ -6,7 +6,7 @@
   "mixins": [
     "IceMixin",
     "SnowMixin",
-    "WeatherMixin"
+    "BiomeMixin"
   ],
   "client": [
   ],

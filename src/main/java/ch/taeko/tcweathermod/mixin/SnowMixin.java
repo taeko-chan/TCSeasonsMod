@@ -1,5 +1,7 @@
 package ch.taeko.tcweathermod.mixin;
 
+import ch.taeko.tcweathermod.TCSeason;
+import ch.taeko.tcweathermod.TCWeatherMod;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SnowBlock;
 import net.minecraft.server.world.ServerWorld;
@@ -19,7 +21,9 @@ public class SnowMixin {
      */
     @Overwrite
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        dropStacks(state, world, pos);
-        world.removeBlock(pos, false);
+        if (TCWeatherMod.currentTemperature > 1) {
+            dropStacks(state, world, pos);
+            world.removeBlock(pos, false);
+        }
     }
 }
