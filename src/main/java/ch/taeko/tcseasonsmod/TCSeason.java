@@ -26,7 +26,7 @@ public class TCSeason {
 
     public static TCSeason.Season getCurrentSeason(int day) {
 
-	   double daysPerSeason = 365f/4f;
+	   double daysPerSeason = 365/4;
 	   int yearDay = day;
 
 	   if (yearDay < daysPerSeason) {
@@ -41,27 +41,30 @@ public class TCSeason {
 
     }
 
-    public static double getSeasonalTemperature(int day, int a) {
+    public static double getSeasonalDownfall(int day, int a) {
 
-	   /*
-	   * Acceleration values under 1, as well as numbers not divisible by 1, will not function properly!
-	   * For this reason, entries are limited to integers.
-	   * */
+	   if (a < 1) {a = 1;}
+
+	   double dayc = (1f / 365f) * day;
+	   double sin = Math.sin(2 * a * Math.PI * dayc);
+	   double sindownfall = 0.75 * Math.pow(sin, 2) + 0.25;
+
+	   return sindownfall;
+
+    }
+
+    public static double getSeasonalTemperature(int day, int a) {
 
 	   if (a < 1) {a = 1;}
 
 	   double dayc = (1f / 365f) * day;
 	   double sin = Math.sin(a * Math.PI * dayc);
-	   double sintemp = 4 * (Math.pow(sin, 2));
+	   double sintemp = Math.pow(sin, 2);
 
 	   double temp = sintemp;
-	   // double temp = Math.random() * (sintemp + 0.025) + (sintemp - 0.025);
-	   // add variation to temperature. haven't figured out how to make temperature constant throughout whole day, as
-	   // it is called every time a biome is called.
 
 	   return temp;
-	   // 0.025 temp plus per day
-	   // temp variation 0.05, about 20 days variation
+
     }
 
 }

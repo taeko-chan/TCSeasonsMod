@@ -10,6 +10,7 @@ public class TCWeatherMod implements ModInitializer {
 
     public static int dayOfYear;
     public static double currentTemperature;
+    public static double currentDownfall;
 
     @Override
     public void onInitialize() {
@@ -17,6 +18,7 @@ public class TCWeatherMod implements ModInitializer {
 	   // universal initalization
 	   dayOfYear = TCSeason.getYearDay();
 	   currentTemperature = TCSeason.getSeasonalTemperature(dayOfYear, 1);
+	   currentDownfall = TCSeason.getSeasonalDownfall(dayOfYear, 1);
 
 	   // output current day and season
 	   System.out.println("TCWeatherMod Initialized. Current day of the year is " + dayOfYear +

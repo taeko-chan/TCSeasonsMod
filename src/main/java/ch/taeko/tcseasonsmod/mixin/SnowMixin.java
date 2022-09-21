@@ -16,11 +16,11 @@ public class SnowMixin {
 
     /**
      * @author Taeko
-     * @reason FUck snow
+     * @reason Snow melts naturally
      */
     @Overwrite
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (TCWeatherMod.currentTemperature > 1) {
+        if (TCWeatherMod.currentTemperature > 0.2) {
             dropStacks(state, world, pos);
             world.removeBlock(pos, false);
         }
