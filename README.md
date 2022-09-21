@@ -8,9 +8,15 @@ this one is that it is __*server side*__.
 ## How do I use the mod?
 The mod is server side only! Just drop it into your server's mod folder (or your personal mod folder, if you're playing in singleplayer). Supports 1.19.x.
 ## Current Features
-Based on the current day (out of 365) of the year, a Minecraft temperature is calculated (0-4, with decimals) using a simple sine wave. This determines the precipitation and if ice or snow melts naturally outside. 
-$$T=4sin^2(\pi x a)$$
+Based on the current day (out of 365) of the year, a Minecraft temperature is calculated (between 0 and 1, temps 1+ not used, with decimals) using a simple sine wave. This determines the precipitation and if ice or snow melts naturally outside. 
+$$T=sin^2(\pi x a)$$
+Additionally, the current downfall level is also dynamically calculated depending on the day:
+$$H=0.75 sin^2(2 \pi x a) + 0.25$$
 Where $x$ is the current day of the year and $a$ is the accelerator (not yet in use), see Control of Seasons.
+
+<img width="395" alt="Screen Shot 2022-09-21 at 15 53 08" src="https://user-images.githubusercontent.com/46656618/191523692-3b4b3b8b-3b02-4242-a4a1-374be65b048d.png">
+Blue function is the temperature, red function is the downfall. X-range 0-1, 1 being 365 days, 0 being 0 days. Y-range 0-1, temperature/downfall level.
+
 ## Current Development Plans
 The mod currently functions. However it is in development and is rough around the edges. Here are some features planned for the future:
 ### Spring (season 1)
