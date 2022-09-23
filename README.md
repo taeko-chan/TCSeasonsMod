@@ -1,6 +1,7 @@
 # TCSeasonsMod
 By Taeko, initially developed for the Taeko & Co Server.
 Supports Fabric Servers, version 1.19.x
+### I am aware that this mod uses overwrites and that this is bad practice. It (mostly) is not permanent ;)
 ## What is this mod?
 Ever wanted to have that wintery feeling in Minecraft when it's cold out?
 This mod changes the behavoir of weather events in Minecraft. It cycles through temperatures and weather based on the real world day of the year. Yes, other Fabric weather mods exist out there, but the beauty of
