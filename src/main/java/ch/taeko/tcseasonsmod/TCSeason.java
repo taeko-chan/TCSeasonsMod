@@ -26,7 +26,7 @@ public class TCSeason {
 
     public static TCSeason.Season getCurrentSeason(int day) {
 
-	   double daysPerSeason = 365/4;
+	   double daysPerSeason = 365f/4f;
 	   int yearDay = day;
 
 	   if (yearDay < daysPerSeason) {
@@ -64,6 +64,20 @@ public class TCSeason {
 	   double temp = sintemp;
 
 	   return temp;
+
+    }
+
+    public static double temperatureConverter(double temp, boolean toCelcius) {
+
+	   double unit = 9f / 0.2f;
+
+	   if (toCelcius) {
+		  temp -= 0.2;
+		  return temp * unit;
+	   } else {
+		  temp += 9;
+		  return temp / unit;
+	   }
 
     }
 

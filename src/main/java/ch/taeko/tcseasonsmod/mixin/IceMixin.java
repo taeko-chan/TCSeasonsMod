@@ -18,7 +18,7 @@ public class IceMixin {
      */
     @Overwrite
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (TCWeatherMod.currentTemperature > 1) {
+        if (TCWeatherMod.currentTemperature > 0.2) {
             this.melt(state, world, pos);
         }
     }
