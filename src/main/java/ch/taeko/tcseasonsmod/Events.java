@@ -7,13 +7,13 @@ import static ch.taeko.tcseasonsmod.WeatherUtilities.updateWeather;
 
 public class Events {
 
-    public static void registerEvents() {
+    /*public static void registerEvents() {
 	   ServerTickEvents.END_SERVER_TICK.register((server) -> {
-				if (staticWeather) {
+				if (!staticWeather) {
 				    updateWeather();
 				}
 			 }
 	   );
-    }
+    }*/
 
 }

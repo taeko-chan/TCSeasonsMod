@@ -35,7 +35,7 @@ public class TCWeatherMod implements ModInitializer {
 			 }
 	   );
 
-	   Events.registerEvents();
+	   //Events.registerEvents();
 
 	   // output current day and season
 	   Log.log(LogLevel.INFO, LogCategory.GENERAL, "TCWeatherMod Initialized. Current day of the year is " + dayOfYear +

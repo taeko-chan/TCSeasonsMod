@@ -27,6 +27,17 @@ public class BiomeMixin {
     public float getDownfall() { return (float)TCWeatherMod.currentDownfall; }
 
     /**
+     * @author
+     * @reason
+     */
+    @Overwrite
+    public Biome.Precipitation getPrecipitation() {
+        if (TCWeatherMod.currentTemperature > 0.25) {
+            return Biome.Precipitation.RAIN;
+        } else return  Biome.Precipitation.SNOW;
+    }
+
+    /**
      * @author Taeko
      * @reason Use new temperature and downfall
      */

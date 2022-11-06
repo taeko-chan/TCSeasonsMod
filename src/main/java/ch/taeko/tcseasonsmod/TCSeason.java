@@ -69,10 +69,10 @@ public class TCSeason {
 
     public static double temperatureConverter(double temp, boolean toCelcius) {
 
-	   double unit = 9f / 0.2f;
+	   double unit = 9f / 0.25f;
 
 	   if (toCelcius) {
-		  temp -= 0.2;
+		  temp -= 0.25;
 		  return temp * unit;
 	   } else {
 		  temp += 9;
