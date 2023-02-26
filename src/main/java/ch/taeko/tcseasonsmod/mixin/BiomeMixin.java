@@ -32,7 +32,7 @@ public class BiomeMixin {
      */
     @Overwrite
     public Biome.Precipitation getPrecipitation() {
-        if (TCWeatherMod.currentTemperature > 0.25) {
+        if (TCWeatherMod.currentTemperature > 0.2) {
             return Biome.Precipitation.RAIN;
         } else return  Biome.Precipitation.SNOW;
     }

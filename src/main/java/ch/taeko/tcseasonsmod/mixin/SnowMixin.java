@@ -6,6 +6,7 @@ import net.minecraft.block.SnowBlock;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.LightType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
@@ -20,7 +21,7 @@ public class SnowMixin {
      */
     @Overwrite
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (TCWeatherMod.currentTemperature > 0.25) {
+        if (TCWeatherMod.currentTemperature > 0.2 || world.getLightLevel(LightType.BLOCK, pos) > 5) {
             dropStacks(state, world, pos);
             world.removeBlock(pos, false);
         }

@@ -29,7 +29,7 @@ public class TCWeatherMod implements ModInitializer {
 	   currentDownfall = TCSeason.getSeasonalDownfall(dayOfYear, 1);
 
 	   ServerTickEvents.END_SERVER_TICK.register((server) -> {
-				if (staticWeather) {
+				if (!staticWeather) {
 					updateWeather();
 				}
 			 }
@@ -49,7 +49,8 @@ public class TCWeatherMod implements ModInitializer {
 							 context.getSource().sendMessage(Text.literal(
                                             "Current Season: " + TCSeason.getCurrentSeason(dayOfYear) +
 										  ", Current Temperature: " + round(TCSeason.temperatureConverter(currentTemperature, true)) + "°C" +
-										  ", Current Day: " + dayOfYear
+										  ", Current Day: " + dayOfYear +
+										  ", Current IG Temperature: " + currentTemperature
 							 ));
 							 return 1;
 						  })

@@ -13,13 +13,6 @@ public class TCSeason {
 	   Calendar calendar = Calendar.getInstance();
 	   int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
 
-	   //365-21 = 344, 344 is overflow point
-	   // offset day by 3 weeks, the average coldest time of year.
-	   if (dayOfYear >= 21) {
-		  dayOfYear -= 21;
-	   } else {
-		  dayOfYear += 344;
-	   }
 	   return dayOfYear;
 
     }
@@ -61,7 +54,7 @@ public class TCSeason {
 	   double sin = Math.sin(a * Math.PI * dayc);
 	   double sintemp = Math.pow(sin, 2);
 
-	   double temp = sintemp;
+	   double temp = sintemp - 0.05f;
 
 	   return temp;
 
@@ -69,10 +62,10 @@ public class TCSeason {
 
     public static double temperatureConverter(double temp, boolean toCelcius) {
 
-	   double unit = 9f / 0.25f;
+	   double unit = 9f / 0.2f;
 
 	   if (toCelcius) {
-		  temp -= 0.25;
+		  temp -= 0.2;
 		  return temp * unit;
 	   } else {
 		  temp += 9;
