@@ -3,6 +3,7 @@ package ch.taeko.tcseasonsmod.mixin;
 import ch.taeko.tcseasonsmod.TCWeatherMod;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.color.world.GrassColors;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,18 +21,11 @@ public class BiomeMixin {
         return (float)TCWeatherMod.currentTemperature;
     }
     /**
-     * @author Taeko
-     * @reason Overwrite vanilla, biome dependent/static downfall.
-     */
-    @Overwrite
-    public float getDownfall() { return (float)TCWeatherMod.currentDownfall; }
-
-    /**
      * @author
      * @reason
      */
     @Overwrite
-    public Biome.Precipitation getPrecipitation() {
+    public Biome.Precipitation getPrecipitation(BlockPos pos) {
         if (TCWeatherMod.currentTemperature > 0.2) {
             return Biome.Precipitation.RAIN;
         } else return  Biome.Precipitation.SNOW;
