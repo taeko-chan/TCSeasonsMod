@@ -1,13 +1,11 @@
 package ch.taeko.tcseasonsmod.mixin;
 
 import ch.taeko.tcseasonsmod.TCWeatherMod;
-import net.minecraft.client.color.world.FoliageColors;
-import net.minecraft.client.color.world.GrassColors;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+import net.minecraft.util.math.MathHelper;
 
 @Mixin(Biome.class)
 public class BiomeMixin {
@@ -18,39 +16,51 @@ public class BiomeMixin {
      */
     @Overwrite
     public float getTemperature() {
-        return (float)TCWeatherMod.currentTemperature;
+        return (float) TCWeatherMod.currentTemperature;
     }
+
     /**
-     * @author
-     * @reason
+     * @author Taeko
+     * @reason Overwrite precipitation based on TCWeatherMod temperature
      */
     @Overwrite
     public Biome.Precipitation getPrecipitation(BlockPos pos) {
-        if (TCWeatherMod.currentTemperature > 0.2) {
-            return Biome.Precipitation.RAIN;
-        } else return  Biome.Precipitation.SNOW;
+        return TCWeatherMod.currentTemperature > 0.2
+                ? Biome.Precipitation.RAIN
+                : Biome.Precipitation.SNOW;
     }
 
     /**
-     * @author Taeko
-     * @reason Use new temperature and downfall
+     * @author colinarelliott
+     * @reason Server-side fallback for grass color, mimicking vanilla style
      */
     @Overwrite
     private int getDefaultGrassColor() {
-        double d = MathHelper.clamp(TCWeatherMod.currentTemperature, 0.0F, 1.0F);
-        double e = MathHelper.clamp(TCWeatherMod.currentDownfall, 0.0F, 1.0F);
-        return GrassColors.getColor(d, e);
+        double temp = MathHelper.clamp(TCWeatherMod.currentTemperature, 0.0, 1.0);
+        double downfall = MathHelper.clamp(TCWeatherMod.currentDownfall, 0.0, 1.0);
+
+        // Vanilla-inspired formula: greener with moderate temp, slightly darker with low downfall
+        int r = (int) (64 + 80 * temp);         // red component
+        int g = (int) (160 + 50 * downfall);    // green component
+        int b = (int) (64 + 32 * temp);         // blue component
+
+        return (r << 16) | (g << 8) | b;
     }
 
     /**
-     * @author Taeko
-     * @reason Use new temperature and downfall
+     * @author colinarelliott
+     * @reason Server-side fallback for foliage color, mimicking vanilla style
      */
     @Overwrite
     private int getDefaultFoliageColor() {
-        double d = MathHelper.clamp(TCWeatherMod.currentTemperature, 0.0F, 1.0F);
-        double e = MathHelper.clamp(TCWeatherMod.currentDownfall, 0.0F, 1.0F);
-        return FoliageColors.getColor(d, e);
-    }
+        double temp = MathHelper.clamp(TCWeatherMod.currentTemperature, 0.0, 1.0);
+        double downfall = MathHelper.clamp(TCWeatherMod.currentDownfall, 0.0, 1.0);
 
+        // Vanilla-inspired foliage: medium green, slightly darker in low temperature/downfall
+        int r = (int) (70 + 50 * temp);
+        int g = (int) (120 + 60 * downfall);
+        int b = (int) (60 + 20 * temp);
+
+        return (r << 16) | (g << 8) | b;
+    }
 }
