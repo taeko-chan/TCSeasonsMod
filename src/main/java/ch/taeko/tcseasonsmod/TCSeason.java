@@ -23,13 +23,13 @@ public class TCSeason {
 	   int yearDay = day;
 
 	   if (yearDay < daysPerSeason) {
-		  return Season.SPRING;
-	   } else if (yearDay < 2*daysPerSeason) {
-		  return Season.SUMMER;
-	   } else if (yearDay < 3*daysPerSeason) {
-		  return Season.FALL;
-	   } else {
 		  return Season.WINTER;
+	   } else if (yearDay < 2*daysPerSeason) {
+		  return Season.SPRING;
+	   } else if (yearDay < 3*daysPerSeason) {
+		  return Season.SUMMER;
+	   } else {
+		  return Season.FALL;
 	   }
 
     }
