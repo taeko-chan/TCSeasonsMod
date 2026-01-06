@@ -1,3 +1,4 @@
+##(!) Development of this mod is discontinued as of 06.01.26 as it has been replaced entirely by a modified version of Fabric Seasons. See repositories. 
 # TCSeasonsMod
 By Taeko, initially developed for the Taeko & Co Server.
 Supports Fabric Servers, version 1.19.x
